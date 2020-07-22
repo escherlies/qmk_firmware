@@ -159,44 +159,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     esc  , n1  , n2  , n3  , n4 , n5  , n6  , n7   , n8  , n9  , n0  , bspc,
     tab  , q   , w   , f   , p  , b   , j   , l    , u   , y   , scln, lbrc,
     bspc , a   , r   , s   , t  , g   , m   , n    , e   , i   , o   , ent,
-    MO(3), z   , x   , c   , d  , v   , k   , h    , comm, dot , slsh, quot,
-    MO(5), lctl, lalt, lgui, spc, ____, rsft, MO(4), left, down, up  , rght
+    lsft , z   , x   , c   , d  , v   , k   , h    , comm, dot , slsh, rsft,
+    MO(5), lctl, lalt, lgui, spc, ____, MO(3), MO(4), left, down, up  , rght
   ),
 
   [1] = LAYOUT_ortho_5x12(
     esc  , n1  , n2  , n3  , n4 , n5  , n6  , n7   , n8  , n9  , n0  , bspc,
     tab  , q   , w   , e   , r  , t   , y   , u    , i   , o   , p   , lbrc,
     bspc , a   , s   , d   , f  , g   , h   , j    , k   , l   , scln, ent,
-    MO(3), z   , x   , c   , v  , b   , n   , m    , comm, dot , slsh, grv,
-    MO(5), lctl, lalt, lgui, spc, ____, rsft, MO(4), left, down, up  , rght
+    lsft , z   , x   , c   , v  , b   , n   , m    , comm, dot , slsh, rsft,
+    MO(5), lctl, lalt, lgui, spc, ____, MO(3), MO(4), left, down, up  , rght
   ),
 
   [2] = LAYOUT_ortho_5x12(
-    TO(0), ____, ____, ____, ____, ____, nlck, psls, past, pmns, ____, bspc,
-    tab  , ____, ____, ____, ____, ____, p7  , p8  , p9  , ppls, ____, del,
-    bspc , ____, ____, ____, ____, ____, p4  , p5  , p6  , pcmm, ____, ent,
-    MO(3), ____, ____, ____, ____, ____, p1  , p2  , p3  , peql, ____, ____,
-    MO(5), lctl, lalt, lgui, spc , ____, p0  , p0  , pdot, ent , ____, ____
+    TO(0), ____, ____, ____, ____, ____, nlck, psls, past, pmns, ____, ____,
+    ____, ____, ____, ____, ____, ____, p7  , p8  , p9  , ppls, ____, ____,
+    ____, ____, ____, ____, ____, ____, p4  , p5  , p6  , pcmm, ____, ____,
+    ____, ____, ____, ____, ____, ____, p1  , p2  , p3  , peql, ____, ____,
+    ____, ____, ____, ____, ____, ____, p0  , p0  , pdot, ent , ____, ____
   ),
 
   [3] = LAYOUT_ortho_5x12(
-    esc , ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, bspc,
+    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
     ____, ____, ____, ____, ____, ____, esc , home, up  , pgup, ins , ____,
-    ____, ____, ____, ____, ____, ____, ____, left, down, rght, tab , ent,
-    xxxx, ____, ____, ____, ____, ____, ____, end , ____, pgdn, del , ____,
-    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____
+    ____, ____, ____, ____, ____, ____, bspc, left, down, rght, tab , ____,
+    ____, ____, ____, ____, ____, ____, ____, end , ____, pgdn, del , ____,
+    ____, ____, ____, ____, ____, ____, ____, ____, mply, vold, volu, mnxt
   ),
 
   [4] = LAYOUT_ortho_5x12(
-    esc , 1   , 2   , 3   , 4   , 5   , 6   , 7   , 8   , 9   , 0   , del,
-    tab , at  , perc, plus, astr, circ, ____, lbrc, ampr, unds, rbrc, ____,
-    bspc, lt  , eql , mins, gt  , hash, pipe, lprn, quot, coln, rprn, ent,
-    xxxx, grv , tild, slsh, exlm, bsls, dlr , lcbr, dquo, eql , rcbr, xxxx,
-    xxxx, xxxx, xxxx, xxxx, spc , xxxx, xxxx, xxxx, mply, vold, volu, mnxt
+    ____, n1  , n2  , n3  , n4  , n5  , n6  , n7  , n8  , n9  , n0  , ____,
+    ____, at  , perc, plus, astr, circ, ____, lbrc, ampr, unds, rbrc, ____,
+    ____, lt  , eql , mins, gt  , hash, pipe, lprn, quot, coln, rprn, ____,
+    ____, grv , tild, slsh, exlm, bsls, dlr , lcbr, dquo, eql , rcbr, ____,
+    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____
   ),
 
   [5] = LAYOUT_ortho_5x12(
-    f1  , f2   , f3     , f4     , f5     , f6     , f7     , f8     , f9     , f10    , f11 , f12,
+    f12 , f1   , f2     , f3     , f4     , f5     , f6     , f7     , f8     , f9     , f10 , f11,
     xxxx, RESET, RGB_TOG, RGB_MOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, xxxx, del,
     xxxx, xxxx , xxxx   , AU_ON  , AU_OFF , AG_NORM, AG_SWAP, TO(0)  , TO(1)  , TO(2)  , xxxx, xxxx,
     xxxx, xxxx , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , DF(0)  , DF(1)  , xxxx   , xxxx, xxxx,
@@ -228,10 +228,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           case rprn: SEND_STRING(")");  break;
           case tild: SEND_STRING("~");  break;
           case unds: SEND_STRING("_");  break;
-          case lt: SEND_STRING("<");  break;
-          case gt: SEND_STRING(">");  break;
+          case lt:   SEND_STRING("<");  break;
+          case gt:   SEND_STRING(">");  break;
           case coln: SEND_STRING(":");  break;
-          case dquo: SEND_STRING(":");  break;
+          case dquo: SEND_STRING("\""); break;
         }
     }
 
