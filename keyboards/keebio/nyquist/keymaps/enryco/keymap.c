@@ -190,7 +190,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_ortho_5x12(
     ____, n1  , n2  , n3  , n4  , n5  , n6  , n7  , n8  , n9  , n0  , ____,
     ____, at  , perc, plus, astr, circ, ____, lbrc, ampr, unds, rbrc, ____,
-    ____, lt  , eql , mins, gt  , hash, pipe, lprn, quot, coln, rprn, ____,
+    ____, lt  , mins , eql, gt  , hash, pipe, lprn, quot, coln, rprn, ____,
     ____, grv , tild, slsh, exlm, bsls, dlr , lcbr, dquo, eql , rcbr, ____,
     ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____
   ),
