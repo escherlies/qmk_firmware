@@ -74,11 +74,11 @@ enum shifted_symbols {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ortho_5x12(
-    esc  , KC_1, KC_2, KC_3, KC_4 , KC_5, KC_6 , KC_7 , KC_8, KC_9, KC_0, bspc,
-    tab  , KC_Q, KC_W, KC_F, KC_P , KC_B, KC_J , KC_L , KC_U, KC_Y, scln, lbrc,
-    bspc , KC_A, KC_R, KC_S, KC_T , KC_G, KC_M , KC_N , KC_E, KC_I, KC_O, ent,
-    lsft , KC_Z, KC_X, KC_C, KC_D , KC_V, KC_K , KC_H , comm, dot , slsh, rsft,
-    MO(5), lctl, lalt, lgui, MO(4), spc , MO(3), MO(4), left, down, up  , rght
+    esc         , KC_1, KC_2, KC_3, KC_4 , KC_5, KC_6 , KC_7 , KC_8, KC_9, KC_0, bspc,
+    tab         , KC_Q, KC_W, KC_F, KC_P , KC_B, KC_J , KC_L , KC_U, KC_Y, scln, lbrc,
+    bspc        , KC_A, KC_R, KC_S, KC_T , KC_G, KC_M , KC_N , KC_E, KC_I, KC_O, ent,
+    LSFT_T(caps), KC_Z, KC_X, KC_C, KC_D , KC_V, KC_K , KC_H , comm, dot , slsh, rsft,
+    MO(5)       , lctl, lalt, lgui, MO(4), spc , MO(3), MO(4), left, down, up  , rght
   ),
 
   [1] = LAYOUT_ortho_5x12(
