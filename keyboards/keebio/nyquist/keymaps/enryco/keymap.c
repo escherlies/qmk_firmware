@@ -159,16 +159,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     esc  , n1  , n2  , n3  , n4 , n5  , n6  , n7   , n8  , n9  , n0  , bspc,
     tab  , q   , w   , f   , p  , b   , j   , l    , u   , y   , scln, lbrc,
     bspc , a   , r   , s   , t  , g   , m   , n    , e   , i   , o   , ent,
-    lsft , z   , x   , c   , d  , v   , k   , h    , comm, dot , slsh, rsft,
-    MO(5), lctl, lalt, lgui, spc, ____, MO(3), MO(4), left, down, up  , rght
+    lsft , z   , x   , c   , d  , v   , k   , h    , comm, dot , slsh, rsft, 
+    MO(5), lctl, lalt, lgui, MO(4), spc, MO(3), MO(4), left, down, up  , rght
   ),
 
   [1] = LAYOUT_ortho_5x12(
-    esc  , n1  , n2  , n3  , n4 , n5  , n6  , n7   , n8  , n9  , n0  , bspc,
-    tab  , q   , w   , e   , r  , t   , y   , u    , i   , o   , p   , lbrc,
-    bspc , a   , s   , d   , f  , g   , h   , j    , k   , l   , scln, ent,
-    lsft , z   , x   , c   , v  , b   , n   , m    , comm, dot , slsh, rsft,
-    MO(5), lctl, lalt, lgui, spc, ____, MO(3), MO(4), left, down, up  , rght
+    ____, n1  , n2  , n3  , n4 , n5  , n6  , n7   , n8  , n9  , n0  , ____,
+    ____, q   , w   , e   , r  , t   , y   , u    , i   , o   , p   , ____,
+    ____, a   , s   , d   , f  , g   , h   , j    , k   , l   , scln, ____,
+    ____, z   , x   , c   , v  , b   , n   , m    , comm, dot , slsh, ____,
+    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____ , ____, ____
   ),
 
   [2] = LAYOUT_ortho_5x12(
@@ -184,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ____, ____, ____, ____, ____, ____, esc , home, up  , pgup, ins , ____,
     ____, ____, ____, ____, ____, ____, bspc, left, down, rght, tab , ____,
     ____, ____, ____, ____, ____, ____, ____, end , ____, pgdn, del , ____,
-    ____, ____, ____, ____, ____, ____, ____, ____, mply, vold, volu, mnxt
+    ____, ____, ____, ____, MO(4), ____, ____, ____, mply, vold, volu, mnxt
   ),
 
   [4] = LAYOUT_ortho_5x12(
@@ -192,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ____, at  , perc, plus, astr, circ, ____, lbrc, ampr, unds, rbrc, ____,
     ____, lt  , mins , eql, gt  , hash, pipe, lprn, quot, coln, rprn, ____,
     ____, grv , tild, slsh, exlm, bsls, dlr , lcbr, dquo, eql , rcbr, ____,
-    ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____
+    ____, ____, ____, ____, MO(3), ____, ____, ____, ____, ____, ____, ____
   ),
 
   [5] = LAYOUT_ortho_5x12(
