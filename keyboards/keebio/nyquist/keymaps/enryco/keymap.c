@@ -72,13 +72,44 @@ enum shifted_symbols {
   dquo
 };
 
+
+enum unicode_names {
+    BX_UL,
+    BX_UR,
+    BX_LL,
+    BX_LR,
+    BX_H,
+    BX_V,
+    BX_HXU,
+    BX_HXD,
+    BX_VXR,
+    BX_VXL,
+    BX_X,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [BX_UL]   = 0x250C, // ┌
+    [BX_UR]   = 0x2510, // ┐
+    [BX_LL]   = 0x2514, // └
+    [BX_LR]   = 0x2518, // ┘
+    [BX_H]    = 0x2500, // ─
+    [BX_V]    = 0x2502, // │
+    [BX_HXU]  = 0x2534, // ┴
+    [BX_HXD]  = 0x252C, // ┬
+    [BX_VXR]  = 0x251C, // ├
+    [BX_VXL]  = 0x2524, // ┤
+    [BX_X]    = 0x253C, // ┼
+};
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ortho_5x12(
-    esc         , KC_1, KC_2, KC_3, KC_4 , KC_5, KC_6 , KC_7 , KC_8, KC_9, KC_0, bspc,
-    tab         , KC_Q, KC_W, KC_F, KC_P , KC_B, KC_J , KC_L , KC_U, KC_Y, scln, lbrc,
-    bspc        , KC_A, KC_R, KC_S, KC_T , KC_G, KC_M , KC_N , KC_E, KC_I, KC_O, ent,
-    lsft        , KC_Z, KC_X, KC_C, KC_D , KC_V, KC_K , KC_H , comm, dot , slsh, rsft,
-    MO(5)       , lctl, ____, lalt, lgui, spc , MO(3), MO(4), left, down, up  , rght
+    esc         , KC_1, KC_2,  KC_3, KC_4 , KC_5, KC_6 , KC_7 , KC_8, KC_9, KC_0, bspc,
+    tab         , KC_Q, KC_W,  KC_F, KC_P , KC_B, KC_J , KC_L , KC_U, KC_Y, scln, lbrc,
+    bspc        , KC_A, KC_R,  KC_S, KC_T , KC_G, KC_M , KC_N , KC_E, KC_I, KC_O, ent,
+    lsft        , KC_Z, KC_X,  KC_C, KC_D , KC_V, KC_K , KC_H , comm, dot , slsh, rsft,
+    MO(5)       , lctl, MO(6), lalt, lgui, spc , MO(3), MO(4), left, down, up  , rght
   ),
 
   [1] = LAYOUT_ortho_5x12(
@@ -119,6 +150,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     xxxx  , xxxx , xxxx   , AU_ON  , AU_OFF , AG_NORM, AG_SWAP, TO(0)  , TO(1)  , TO(2)  , xxxx  , xxxx,
     xxxx  , xxxx , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , DF(0)  , DF(1)  , xxxx   , xxxx  , KC_CAPS,
     xxxx  , xxxx , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , xxxx   , xxxx  , xxxx
+  ),
+
+  [6] = LAYOUT_ortho_5x12(
+    ____, ____, ____, ____, ____, ____,     ____,    ____,      ____,      ____,      ____,    ____,
+    ____, ____, ____, ____, ____, ____,     ____,    X(BX_UL),  X(BX_HXD), X(BX_UR),  ____,    ____,
+    ____, ____, ____, ____, ____, ____,     X(BX_V), X(BX_VXR), X(BX_X),   X(BX_VXL), X(BX_H), ____,
+    ____, ____, ____, ____, ____, ____,     ____,    X(BX_LL),  X(BX_HXU), X(BX_LR),  ____,    ____,
+    ____, ____, ____, ____, ____, ____,     ____,    ____,      ____,      ____,      ____,    ____
   ),
 };
 
